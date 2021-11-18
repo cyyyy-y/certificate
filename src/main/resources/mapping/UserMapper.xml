@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.hdu.mapper.UserMapper">
+
+<!--	查询所有user-->
+    <select id="selectUsers" resultType="cn.edu.hdu.model.User">
+		select * from user
+	</select>
+
+<!--	根据name和pwd查询user-->
+	<select id="login" parameterType="cn.edu.hdu.model.User" resultType="cn.edu.hdu.model.User">
+		select * from user where name=#{name} AND pwd=#{pwd}
+    </select>
+
+</mapper>
